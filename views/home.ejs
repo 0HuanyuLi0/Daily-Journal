@@ -1,0 +1,27 @@
+<%- include("partials/header"); -%>
+
+<h1>
+    <%=postTitle%>
+</h1>
+
+<div class="output">
+    <%=postContent%>
+</div>
+<!-- <%=          %> -->
+<%if(postTitle==='Home' ){%>
+
+<% posts.forEach(function(post){ %>
+<h1>
+    <%= post.title %>
+</h1>
+<div>
+    <%= post.content.slice(0,100) %> ...
+    <a href="posts/<%=post._id %>">💌Read More</a> or
+    <a href="delete/<%=post._id %>">❌Delete</a>
+</div>
+<% }) %>
+<%}%>
+
+
+
+                <%- include("partials/footer"); -%>
